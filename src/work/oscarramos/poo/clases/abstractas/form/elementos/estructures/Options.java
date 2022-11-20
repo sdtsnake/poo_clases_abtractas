@@ -29,6 +29,11 @@ public class Options {
         this.selected = selected;
     }
 
+    public Options setSelected() {
+        this.selected = true;
+        return this;
+    }
+
     public Options(String value, String name) {
         this.value = value;
         this.name = name;

@@ -21,25 +21,32 @@ public class ImplementForm {
 
         SelectForm language = new SelectForm("language");
 
-        Options java = new Options("1","Java");
-        language.addOption(java)
+        language.addOption(new Options("2","Java"))
         .addOption(new Options("2","C"))
-        .addOption(new Options("3","Cobol"))
+        .addOption(new Options("3","Cobol").setSelected())
         .addOption(new Options("4","SQL"))
         .addOption(new Options("5","PHP"));
+        ElementoForm helloText = new ElementoForm("Saludo") {
+            @Override
+            public String writeHtml() {
+                return "<input disable name=\""+this.name+"\""
+                        +" value=\""+this.value+"\">";
+            }
+        };
 
+        helloText.setValue("Esta desahabilitado");
         username.setValue("snake");
         password.setValue("abc1234");
         email.setValue("oscar1940@gmail.com");
         age.setValue("39");
         experience.setValue("17 años perdiendo en tiempo en siesa.");
-        java.setSelected(true);
         List<ElementoForm> elementosForm = Arrays.asList(username,
                 password,
                 email,
                 age,
                 experience,
-                language);
+                language,
+                helloText);
 
         elementosForm.forEach(element ->{
             System.out.println(element.writeHtml());
