@@ -7,6 +7,7 @@ import work.oscarramos.poo.clases.abstractas.form.elementos.TextAreaForm;
 import work.oscarramos.poo.clases.abstractas.form.elementos.estructures.Options;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ImplementForm {
@@ -33,14 +34,12 @@ public class ImplementForm {
         age.setValue("39");
         experience.setValue("17 años perdiendo en tiempo en siesa.");
         java.setSelected(true);
-        List<ElementoForm> elementosForm = new ArrayList<>();
-
-        elementosForm.add(username);
-        elementosForm.add(password);
-        elementosForm.add(email);
-        elementosForm.add(age);
-        elementosForm.add(experience);
-        elementosForm.add(language);
+        List<ElementoForm> elementosForm = Arrays.asList(username,
+                password,
+                email,
+                age,
+                experience,
+                language);
 
         elementosForm.forEach(element ->{
             System.out.println(element.writeHtml());
