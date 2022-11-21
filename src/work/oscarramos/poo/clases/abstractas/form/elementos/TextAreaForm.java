@@ -1,6 +1,6 @@
 package work.oscarramos.poo.clases.abstractas.form.elementos;
 
-public class TextAreaForm extends ElementoForm{
+public class TextAreaForm extends ElementForm {
     private int rows;
     private int cols;
 

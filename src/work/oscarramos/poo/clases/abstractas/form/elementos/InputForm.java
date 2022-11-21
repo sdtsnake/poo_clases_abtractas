@@ -1,6 +1,6 @@
 package work.oscarramos.poo.clases.abstractas.form.elementos;
 
-public class InputForm extends ElementoForm {
+public class InputForm extends ElementForm {
     private String type = "text";
 
     public String getType() {

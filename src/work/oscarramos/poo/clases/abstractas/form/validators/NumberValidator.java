@@ -1,7 +1,7 @@
 package work.oscarramos.poo.clases.abstractas.form.validators;
 
 public class NumberValidator extends Validator{
-    protected String msj = "el campo debe ser un numero";
+    protected String msj = "el campo %s debe ser un numero";
 
     @Override
     public void setMsj(String msj) {

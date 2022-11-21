@@ -1,7 +1,7 @@
 package work.oscarramos.poo.clases.abstractas.form.validators;
 
 public class RequiredValidator extends Validator{
-    protected String msj = "El campo no puede estar vacio";
+    protected String msj = "El campo %s no puede estar vacio";
 
     @Override
     public void setMsj(String msj) {

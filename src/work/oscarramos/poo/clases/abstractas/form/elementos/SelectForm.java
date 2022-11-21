@@ -5,7 +5,7 @@ import work.oscarramos.poo.clases.abstractas.form.elementos.estructures.Options;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectForm extends ElementoForm{
+public class SelectForm extends ElementForm {
     private List<Options> options;
 
     public SelectForm(String name) {

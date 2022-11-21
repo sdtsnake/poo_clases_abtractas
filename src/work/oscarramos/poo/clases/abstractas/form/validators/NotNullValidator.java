@@ -1,7 +1,7 @@
 package work.oscarramos.poo.clases.abstractas.form.validators;
 
 public class NotNullValidator extends Validator{
-    protected String msj = "El campo no puede ser nulo";
+    protected String msj = "El campo %s no puede ser nulo";
 
     @Override
     public void setMsj(String msj) {

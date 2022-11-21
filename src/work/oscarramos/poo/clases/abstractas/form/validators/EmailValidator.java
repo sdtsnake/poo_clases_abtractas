@@ -1,7 +1,7 @@
 package work.oscarramos.poo.clases.abstractas.form.validators;
 
 public class EmailValidator extends Validator{
-   protected String msj = "Formaoto del correo no es valida";
+   protected String msj = "El campo %s tiene un formato de correo no valido";
    private final static String EMAIL_REGEX = "^(.+)@(.+)$";
 
     @Override
