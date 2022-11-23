@@ -2,6 +2,7 @@ package work.oscarramos.poo.clases.abstractas.form.elementos;
 
 
 import work.oscarramos.poo.clases.abstractas.form.validators.Validator;
+import work.oscarramos.poo.clases.abstractas.form.validators.message.MesaageFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +34,16 @@ abstract public class ElementForm {
     public boolean isValid(){
          for(Validator val: validators){
             if(!val.isValid(this.value)){
-                this.errors.add(String.format(val.getMsj(), name));
+                if(val instanceof MesaageFormat) {
+                    this.errors.add(((MesaageFormat) val).getMesaageFormat(value));
+                }
+                else{
+                    this.errors.add(String.format(val.getMsj(), name));
+                }
+
             }
-        }
+
+         }
         return this.errors.isEmpty();
     }
     abstract public String writeHtml();

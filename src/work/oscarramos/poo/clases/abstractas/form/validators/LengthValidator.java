@@ -1,8 +1,8 @@
 package work.oscarramos.poo.clases.abstractas.form.validators;
 
-import work.oscarramos.poo.clases.abstractas.form.ImplementForm;
+import work.oscarramos.poo.clases.abstractas.form.validators.message.MesaageFormat;
 
-public class LengthValidator extends Validator{
+public class LengthValidator extends Validator implements MesaageFormat {
     protected String msj = "El campo %s debe tener un minimo %d caracteres y un maximo %d caracteres";
     private int min;
     protected int max = Integer.MAX_VALUE;
@@ -27,7 +27,7 @@ public class LengthValidator extends Validator{
 
     @Override
     public boolean isValid(String value) {
-        this.msj = String.format(this.msj, this.min,this.max);
+        this.msj = String.format(this.msj,value, this.min,this.max);
         if(value == null){
             return true;
         }
@@ -35,5 +35,11 @@ public class LengthValidator extends Validator{
         int length = value.length();
 
         return (length >= min && length <= max);
+    }
+
+    @Override
+    public String getMesaageFormat(String value) {
+
+        return String.format(this.msj, value, this.min,this.max);
     }
 }
